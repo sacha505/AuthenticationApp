@@ -20,6 +20,11 @@ const routes: Routes = [
       .then(m => m.ResetPassword)
   },
   {
+    path: 'details',
+    loadChildren: () => import('./details/details.module')
+      .then(m => m.DetailsModule)
+  },
+  {
     path: '',
     component: SecretComponent,
     canActivate: [AuthGuard],
